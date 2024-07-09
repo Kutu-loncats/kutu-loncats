@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Receiver</title>
+</head>
+<body>
+    <h1>Received Game Data</h1>
+    <div id="dataContainer">
+        <p>Loading data...</p>
+    </div>
+
+    <script>
+        // Fungsi untuk mengambil parameter URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Mendapatkan data yang dikirimkan dari server
+        var receivedData = getUrlParameter('data');
+
+        // Menampilkan data di elemen dengan id 'dataContainer'
+        var dataContainer = document.getElementById('dataContainer');
+        dataContainer.innerHTML = '';
+        if (receivedData) {
+            var dataParagraph = document.createElement('p');
+            dataParagraph.textContent = 'Received Data: ' + receivedData;
+            dataContainer.appendChild(dataParagraph);
+        } else {
+            var noDataParagraph = document.createElement('p');
+            noDataParagraph.textContent = 'No data received.';
+            dataContainer.appendChild(noDataParagraph);
+        }
+
+        // Log ke konsol untuk debugging
+        console.log('Received Data:', receivedData);
+    </script>
+</body>
+</html>
