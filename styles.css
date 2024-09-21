@@ -1,0 +1,141 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #0a0a0a, #1e1e2e);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #1e1e2e, #000);
+    text-align: center;
+    animation: backgroundGlow 5s ease-in-out infinite alternate;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #8a2be2;
+    text-shadow: 0 0 20px #8a2be2, 0 0 30px rgba(138, 43, 226, 0.8);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #00bfff;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 15px #00bfff, 0 0 25px rgba(0, 191, 255, 0.8);
+}
+
+/* Section Titles */
+section h3 {
+    font-size: 2.5rem;
+    color: #8a2be2;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s;
+}
+
+.about, .skills, .experience, .portfolio, .contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Skills List */
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills li {
+    background: #1e1e2e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+    transition: all 0.3s ease;
+}
+
+.skills li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+}
+
+/* Portfolio Section */
+.portfolio {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    background-color: #1e1e2e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e2e;
+    padding: 20px;
+    text-align: center;
+    color: #00bfff;
+    margin-top: 50px;
+}
+
+/* Animations */
+@keyframes backgroundGlow {
+    0% {
+        background: radial-gradient(circle at 50% 50%, #1e1e2e, #000);
+        box-shadow: 0 0 30px #8a2be2, 0 0 60px #00bfff;
+    }
+    100% {
+        background: radial-gradient(circle at 50% 50%, #1e1e2e, #000);
+        box-shadow: 0 0 50px #8a2be2, 0 0 80px #00bfff;
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        color: #8a2be2;
+        text-shadow: 0 0 20px #8a2be2, 0 0 40px #00bfff;
+    }
+    100% {
+        color: #00bfff;
+        text-shadow: 0 0 30px #00bfff, 0 0 50px #8a2be2;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
