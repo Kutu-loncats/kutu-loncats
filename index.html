@@ -3,41 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Receiver</title>
+    <title>Your Professional Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Received Game Data</h1>
-    <div id="dataContainer">
-        <p>Loading data...</p>
-    </div>
+    <header>
+        <div class="hero">
+            <h1>Your Name</h1>
+            <h2>Web Developer & Designer</h2>
+        </div>
+    </header>
 
-    <script>
-        // Fungsi untuk mengambil parameter URL
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+    <main>
+        <section class="about">
+            <h3>About Me</h3>
+            <p>I’m a passionate Web Developer and Designer with a knack for creating stunning, functional websites. With several years of experience, I specialize in web technologies like HTML, CSS, JavaScript, and responsive design.</p>
+            <p>I strive to craft beautiful user experiences and deliver solutions that are both efficient and effective for my clients.</p>
+        </section>
 
-        // Mendapatkan data yang dikirimkan dari server
-        var receivedData = getUrlParameter('data');
+        <section class="skills">
+            <h3>Skills</h3>
+            <ul>
+                <li>Front-End Development (HTML, CSS, JavaScript)</li>
+                <li>UI/UX Design</li>
+                <li>Responsive Web Design</li>
+                <li>JavaScript Frameworks (React, Vue.js)</li>
+            </ul>
+        </section>
 
-        // Menampilkan data di elemen dengan id 'dataContainer'
-        var dataContainer = document.getElementById('dataContainer');
-        dataContainer.innerHTML = '';
-        if (receivedData) {
-            var dataParagraph = document.createElement('p');
-            dataParagraph.textContent = 'Received Data: ' + receivedData;
-            dataContainer.appendChild(dataParagraph);
-        } else {
-            var noDataParagraph = document.createElement('p');
-            noDataParagraph.textContent = 'No data received.';
-            dataContainer.appendChild(noDataParagraph);
-        }
+        <section class="experience">
+            <h3>Experience</h3>
+            <div class="experience-item">
+                <h4>Development Specialist</h4>
+                <p><strong>Polkadot (Freelance)</strong></p>
+                <p>March 2020 - Present | 4 years 7 months</p>
+                <p>Marine Parade, Central Singapore Community Development Council, Singapore</p>
+                <p>Developing algorithms, testing network concepts, and working with IT Infrastructure and Algorithm Design. Expertise includes over 12 key skills.</p>
+            </div>
 
-        // Log ke konsol untuk debugging
-        console.log('Received Data:', receivedData);
-    </script>
+            <div class="experience-item">
+                <h4>Blockchain Analyst</h4>
+                <p><strong>Blockchain (Freelance)</strong></p>
+                <p>December 2022 - February 2024 | 1 year 3 months</p>
+                <p>Specialized in product development and research. Skills include Product Development, Sales Management, and Community Service with expertise in over 7 key areas.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Project Consultant</h4>
+                <p><strong>Decode Labs</strong></p>
+                <p>August 2022 - December 2023 | 1 year 5 months</p>
+                <p>Lisbon, Portugal</p>
+                <p>Worked on product development and research, with expertise in over 9 areas, including market research and project consulting.</p>
+            </div>
+
+            <div class="experience-item">
+                <h4>Project Specialist</h4>
+                <p><strong>CryptoCurrency</strong></p>
+                <p>January 2014 - July 2020 | 6 years 7 months</p>
+                <p>Specialized in Financial Analysis and Product Development with expertise in over 5 areas.</p>
+            </div>
+        </section>
+
+        <section class="portfolio">
+            <h3>Portfolio</h3>
+            <div class="portfolio-item">Project 1: Corporate Website</div>
+            <div class="portfolio-item">Project 2: E-commerce Platform</div>
+            <div class="portfolio-item">Project 3: Portfolio Design</div>
+        </section>
+
+        <section class="contact">
+            <h3>Connect with Me</h3>
+
+            <!-- LinkedIn Profile Badge -->
+            <div class="linkedin-badge">
+                <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+                <!-- Add LinkedIn Badge here (replace with your actual badge snippet from LinkedIn) -->
+            </div>
+
+            <!-- Instagram Link -->
+            <div class="instagram">
+                <p>Follow me on Instagram: 
+                    <a href="https://www.instagram.com/kutu_loncats" target="_blank">@kutu_loncats</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Your Name</p>
+        <p><a href="mailto:youremail@example.com">Contact Me</a></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
