@@ -7,20 +7,48 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(180deg, #0a0a0a, #1e1e2e);
+    background-color: #000;
     color: #fff;
     overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
 }
 
-/* Header Styles */
+/* Custom Cursor */
+.custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: width 0.2s ease, height 0.2s ease;
+    z-index: 9999;
+}
+
+/* Hero Section */
 header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background: radial-gradient(circle at 50% 50%, #1e1e2e, #000);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    animation: backgroundGlow 5s ease-in-out infinite alternate;
 }
 
 h1 {
@@ -37,66 +65,65 @@ h2 {
     text-shadow: 0 0 15px #00bfff, 0 0 25px rgba(0, 191, 255, 0.8);
 }
 
-/* Section Titles */
-section h3 {
-    font-size: 2.5rem;
-    color: #8a2be2;
-    margin-bottom: 1rem;
-    animation: fadeIn 2s;
+/* Text Reveal Animation */
+.reveal-text {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
 }
 
-.about, .skills, .experience, .portfolio, .contact {
-    padding: 50px 20px;
-    text-align: center;
+.reveal-text::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00bfff;
+    animation: revealText 1.5s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 
-/* Skills List */
-.skills ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+@keyframes revealText {
+    0% {
+        top: 100%;
+        height: 2px;
+    }
+    50% {
+        top: 0;
+        height: 100%;
+    }
+    100% {
+        top: 0;
+        height: 0;
+    }
 }
 
-.skills li {
-    background: #1e1e2e;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
-    transition: all 0.3s ease;
-}
-
-.skills li:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
-}
-
-/* Portfolio Section */
-.portfolio {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
+/* Portfolio Items with Tilt Effect */
 .portfolio-item {
     background-color: #1e1e2e;
+    color: #fff;
     padding: 20px;
     border-radius: 10px;
     width: 200px;
-    color: #fff;
     text-align: center;
     box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    margin: 20px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
     box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
+}
+
+/* Tilt Effect */
+.tilt {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out;
+}
+
+.tilt:hover {
+    transform: rotateY(10deg) rotateX(10deg);
 }
 
 /* Footer */
@@ -105,21 +132,9 @@ footer {
     padding: 20px;
     text-align: center;
     color: #00bfff;
-    margin-top: 50px;
 }
 
 /* Animations */
-@keyframes backgroundGlow {
-    0% {
-        background: radial-gradient(circle at 50% 50%, #1e1e2e, #000);
-        box-shadow: 0 0 30px #8a2be2, 0 0 60px #00bfff;
-    }
-    100% {
-        background: radial-gradient(circle at 50% 50%, #1e1e2e, #000);
-        box-shadow: 0 0 50px #8a2be2, 0 0 80px #00bfff;
-    }
-}
-
 @keyframes textGlow {
     0% {
         color: #8a2be2;
@@ -128,14 +143,5 @@ footer {
     100% {
         color: #00bfff;
         text-shadow: 0 0 30px #00bfff, 0 0 50px #8a2be2;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
