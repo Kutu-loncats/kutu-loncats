@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kutu Loncats is a web developer specializing in stunning and responsive website designs with modern web technologies.">
+    <meta name="keywords" content="web developer, designer, responsive design, JavaScript, HTML, CSS, portfolio">
+    <meta property="og:title" content="Kutu Loncats - Web Developer">
+    <meta property="og:description" content="Stunning web development and design.">
+    <meta property="og:image" content="link-to-image.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://trusted-scripts.com;">
     <title>Kutu Loncats - Web Developer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
 </head>
 <body>
     <!-- Hero Section with Floating Particles -->
@@ -23,7 +29,6 @@
         <section class="about">
             <h3 class="reveal-text">About Me</h3>
             <p>I’m a passionate Web Developer and Designer with expertise in creating visually stunning and functional websites. My experience spans across a range of web technologies including HTML, CSS, JavaScript, and responsive design.</p>
-            <p>I’m dedicated to delivering beautiful user experiences and practical solutions tailored to client needs.</p>
         </section>
 
         <!-- Skills Section -->
@@ -44,16 +49,20 @@
                 <h4>Development Specialist</h4>
                 <p><strong>Polkadot (Freelance)</strong></p>
                 <p>March 2020 - Present | 4 years 7 months</p>
-                <p>Developing algorithms, testing network concepts, and working with IT Infrastructure and Algorithm Design. Expertise includes over 12 key skills.</p>
             </div>
         </section>
 
         <!-- Portfolio Section with Tilt Effect -->
         <section class="portfolio">
             <h3 class="reveal-text">Portfolio</h3>
-            <div class="portfolio-item tilt">Project 1: Corporate Website</div>
-            <div class="portfolio-item tilt">Project 2: E-commerce Platform</div>
-            <div class="portfolio-item tilt">Project 3: Portfolio Design</div>
+            <div class="portfolio-filter">
+                <button data-filter="all">All</button>
+                <button data-filter="web">Web Development</button>
+                <button data-filter="design">UI/UX Design</button>
+            </div>
+            <div class="portfolio-item tilt" data-category="web">Project 1: Corporate Website</div>
+            <div class="portfolio-item tilt" data-category="design">Project 2: E-commerce Platform</div>
+            <div class="portfolio-item tilt" data-category="web">Project 3: Portfolio Design</div>
         </section>
 
         <!-- Contact Section -->
@@ -62,14 +71,8 @@
             <div class="linkedin-badge">
                 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
                 <div class="badge-base LI-profile-badge" data-locale="in_ID" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="kutuloncats" data-version="v1">
-                    <a class="badge-base__link LI-simple-link" href="https://id.linkedin.com/in/kutuloncats?trk=profile-badge">kutu loncats</a>
+                    <a class="badge-base__link LI-simple-link" href="https://id.linkedin.com/in/kutuloncats">kutu loncats</a>
                 </div>
-            </div>
-
-            <div class="instagram">
-                <p>Follow me on Instagram: 
-                    <a href="https://www.instagram.com/kutu_loncats" target="_blank">@kutu_loncats</a>
-                </p>
             </div>
         </section>
     </main>
@@ -81,7 +84,11 @@
     </footer>
 
     <!-- Include JS Files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
     <script src="particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
 </body>
 </html>
