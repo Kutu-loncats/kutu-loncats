@@ -86,7 +86,6 @@ casino-web-app/
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd casino-web-app/backend
    ```
 
 2. Install dependencies:
@@ -130,7 +129,7 @@ casino-web-app/
    npm start
    ```
 
-4. Access the app at `http://localhost:3000`.
+4. Access the app at `http://localhost:8800`.
 
 ---
 
